@@ -18,7 +18,7 @@ class _SebhaTabState extends State<SebhaTab> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Sebha_Logo(onSebhaClick,counter),
+        Sebha_Logo(onSebhaClick, counter),
         SebhaTitle(),
         Container(
           padding: const EdgeInsets.all(20),
@@ -67,9 +67,10 @@ class _SebhaTabState extends State<SebhaTab> {
       ],
     );
   }
-  void onSebhaClick(int counter){
+
+  void onSebhaClick(int counter) {
     if (this.counter >= 0 && this.counter <= 30 && title == 'Subhan Allah') {
-      this.counter ++;
+      this.counter++;
       counter = this.counter;
       this.counter = counter;
       if (this.counter == 30) {
@@ -78,7 +79,7 @@ class _SebhaTabState extends State<SebhaTab> {
       }
     }
     if (this.counter >= 0 && this.counter <= 30 && title == 'Alhamdulellah') {
-      this.counter ++;
+      this.counter++;
       counter = this.counter;
       this.counter = counter;
       if (this.counter == 30) {
@@ -87,7 +88,7 @@ class _SebhaTabState extends State<SebhaTab> {
       }
     }
     if (this.counter >= 0 && this.counter <= 30 && title == 'Allah Akbar') {
-      this.counter ++;
+      this.counter++;
       counter = this.counter;
       this.counter = counter;
       if (this.counter == 30) {

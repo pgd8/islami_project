@@ -21,7 +21,7 @@ class _SebhaBodyLogoState extends State<SebhaBodyLogo> {
       onTap: () {
         widget.onClick(widget.counter);
         setState(() {
-          turns += 1/25;
+          turns += 1 / 25;
         });
       },
       splashFactory: NoSplash.splashFactory,
