@@ -135,7 +135,7 @@ class QuranTab extends StatelessWidget {
         ),
         QuranTabDiv(),
         Expanded(
-          child: ListView.builder(
+          child: ListView.separated(
             itemBuilder: (context, index) => InkWell(
               onTap: () {
                 Navigator.pushNamed(context, SuraDetailsScreen.routeName,
@@ -151,6 +151,12 @@ class QuranTab extends StatelessWidget {
               ),
             ),
             itemCount: suraName.length,
+            separatorBuilder: (context, index) => const Divider(
+              thickness: 0.75,
+              color: Color(0xFFB7935F),
+              endIndent: 50,
+              indent: 50,
+            ),
           ),
         )
       ],

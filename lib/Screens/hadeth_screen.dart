@@ -26,13 +26,8 @@ class _HadethScreenState extends State<HadethScreen> {
           image: DecorationImage(
               image: AssetImage('assets/images/bg3.png'), fit: BoxFit.fill)),
       child: Scaffold(
-        backgroundColor: Colors.transparent,
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          title: Text('hadeth ${hadethModel.hadethNumber + 1}',
-              style: const TextStyle(
-                fontFamily: 'elmessiri',
-              )),
+          title: Text('hadeth ${hadethModel.hadethNumber + 1}',),
           centerTitle: true,
         ),
         body: Container(

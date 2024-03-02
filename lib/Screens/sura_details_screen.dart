@@ -23,12 +23,9 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
           image: DecorationImage(
               image: AssetImage('assets/images/bg3.png'), fit: BoxFit.fill)),
       child: Scaffold(
-        backgroundColor: Colors.transparent,
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
           title: Text(
             sura.name,
-            style: const TextStyle(fontFamily: 'elmessiri'),
           ),
           centerTitle: true,
         ),
@@ -37,9 +34,15 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
           child: Card(
             color: const Color.fromRGBO(255, 255, 255, 0.7607843137254902),
             elevation: 20,
-            child: ListView.builder(
+            child: ListView.separated(
                 itemBuilder: (context, index) =>
                     Text(content[index],textAlign: TextAlign.center,),
+              separatorBuilder: (context, index) => const Divider(
+                thickness: 0.75,
+                color: Color(0xFFB7935F),
+                endIndent: 50,
+                indent: 50,
+              ),
               itemCount: content.length,
               ),
           ),

@@ -10,7 +10,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-          appBarTheme: const AppBarTheme(backgroundColor: Colors.transparent),
+          scaffoldBackgroundColor: Colors.transparent,
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.transparent,
+            centerTitle: true,
+            titleTextStyle: TextStyle(
+                fontFamily: 'elmessiri', color: Colors.black, fontSize: 25),
+          ),
           bottomNavigationBarTheme: const BottomNavigationBarThemeData(
               backgroundColor: Color(0xFFB7935F),
               type: BottomNavigationBarType.fixed,
