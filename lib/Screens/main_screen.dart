@@ -27,12 +27,9 @@ class _MainScreenState extends State<MainScreen> {
               ),
               fit: BoxFit.fill)),
       child: Scaffold(
-        backgroundColor: Colors.transparent,
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
           title: const Text(
             'Islami',
-            style: TextStyle(fontFamily: 'elmessiri'),
           ),
           centerTitle: true,
         ),

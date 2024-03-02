@@ -1,6 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
+import 'package:islami/MyApp/my_theme.dart';
 import 'package:islami/Screens/hadeth_screen.dart';
 import 'package:islami/Screens/main_screen.dart';
 import 'package:islami/Screens/sura_details_screen.dart';
@@ -9,23 +10,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-          scaffoldBackgroundColor: Colors.transparent,
-          appBarTheme: const AppBarTheme(
-            backgroundColor: Colors.transparent,
-            centerTitle: true,
-            titleTextStyle: TextStyle(
-                fontFamily: 'elmessiri', color: Colors.black, fontSize: 25),
-          ),
-          bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-              backgroundColor: Color(0xFFB7935F),
-              type: BottomNavigationBarType.fixed,
-              unselectedItemColor: Colors.white,
-              selectedItemColor: Colors.black,
-              showUnselectedLabels: false,
-              selectedIconTheme: IconThemeData(
-                size: 30,
-              ))),
+      theme: MyTheme.lightTheme,
+      darkTheme: MyTheme.darkTheme,
       debugShowCheckedModeBanner: false,
       title: 'Islami',
       initialRoute: MainScreen.routeName,

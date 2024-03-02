@@ -28,7 +28,6 @@ class _HadethScreenState extends State<HadethScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: Text('hadeth ${hadethModel.hadethNumber + 1}',),
-          centerTitle: true,
         ),
         body: Container(
           margin: const EdgeInsets.only(bottom: 90,right: 20,left: 20),
