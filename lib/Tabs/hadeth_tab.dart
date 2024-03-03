@@ -18,11 +18,11 @@ class HadethTab extends StatelessWidget {
         QuranTabDiv(),
         const Text(
           'Ahadeth',
-          style: TextStyle(fontFamily: 'elmessiri'),
+          style: TextStyle(fontFamily: 'elmessiri',fontSize: 25),
         ),
         QuranTabDiv(),
         Expanded(
-          child: ListView.builder(
+          child: ListView.separated(
             itemBuilder: (context, index) => InkWell(
               onTap: () {
                 Navigator.pushNamed(context, HadethScreen.routeName,
@@ -31,10 +31,16 @@ class HadethTab extends StatelessWidget {
               child: Text(
                 'hadeth ${index+1}',
                 textAlign: TextAlign.center,
-                style: const TextStyle(fontFamily: 'JFFlat'),
+                style: const TextStyle(fontFamily: 'JFFlat',fontSize: 25),
               ),
             ),
             itemCount: hadethNumber.length,
+            separatorBuilder: (context, index) => const Divider(
+              thickness: 1.25,
+              color: Color(0xFFB7935F),
+              endIndent: 50,
+              indent: 50,
+            ),
           ),
         )
       ],

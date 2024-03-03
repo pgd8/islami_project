@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami/Data_Classes/sura_model.dart';
 import 'package:islami/Screens/sura_details_screen.dart';
 import 'package:islami/Tabs/Quran_Tab_Components/quran_logo.dart';
@@ -128,10 +129,10 @@ class QuranTab extends StatelessWidget {
       children: [
         QuranLogo(),
         QuranTabDiv(),
-        const Text(
+         Text(
           'Sura Name',
           textAlign: TextAlign.center,
-          style: TextStyle(fontFamily: 'elmessiri'),
+          style: TextStyle(fontFamily: 'elmessiri',fontSize: 25.sp),
         ),
         QuranTabDiv(),
         Expanded(
@@ -145,14 +146,14 @@ class QuranTab extends StatelessWidget {
                 margin: const EdgeInsets.only(top: 10),
                 child: Text(
                   suraName[index],
-                  style: const TextStyle(fontFamily: 'JFFlat'),
+                  style:  TextStyle(fontFamily: 'JFFlat',fontSize: 25.sp),
                   textAlign: TextAlign.center,
                 ),
               ),
             ),
             itemCount: suraName.length,
-            separatorBuilder: (context, index) => const Divider(
-              thickness: 0.75,
+            separatorBuilder: (context, index) =>  const Divider(
+              thickness: 1.25,
               color: Color(0xFFB7935F),
               endIndent: 50,
               indent: 50,

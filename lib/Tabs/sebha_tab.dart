@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami/Tabs/Sebha_Tab_Components/sebha_logo.dart';
 import 'package:islami/Tabs/Sebha_Tab_Components/sebha_screen_title.dart';
 
@@ -18,25 +19,28 @@ class _SebhaTabState extends State<SebhaTab> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(
+          height: 0.1.sh,
+        ),
         Sebha_Logo(onSebhaClick, counter),
         SebhaTitle(),
         Container(
-          padding: const EdgeInsets.all(20),
-          margin: const EdgeInsets.only(top: 20),
+          padding: const EdgeInsets.all(20).r,
+          margin: const EdgeInsets.only(top: 20).r,
           decoration: BoxDecoration(
               color: const Color.fromRGBO(183, 147, 95, 0.57),
-              borderRadius: BorderRadius.circular(25)),
+              borderRadius: BorderRadius.circular(25.r)),
           child: Text('$counter'),
         ),
         Container(
-          margin: const EdgeInsets.only(top: 20),
+          margin: const EdgeInsets.only(top: 20).r,
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFFB7935F),
             ),
             child: Text(
               title,
-              style: TextStyle(color: Colors.white, fontFamily: 'JFFlat'),
+              style: TextStyle(color: Colors.white, fontFamily: 'JFFlat',fontSize: 25.sp),
             ),
             onPressed: () {
               if (counter >= 0 && counter <= 30 && title == 'Subhan Allah') {

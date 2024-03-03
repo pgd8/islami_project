@@ -8,8 +8,9 @@ class AppModeSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        showBottomSheet(
+        showModalBottomSheet(
           context: context,
+          elevation: 20,
           builder: (context) => Column(
             mainAxisSize: MainAxisSize.min,
             children: [

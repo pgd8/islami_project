@@ -11,7 +11,8 @@ class AppLanguageSheet extends StatelessWidget {
       onTap: () {
         showModalBottomSheet(
             context: context,
-            builder: (context) => Column(
+          elevation: 20,
+          builder: (context) => Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Container(
@@ -26,6 +27,7 @@ class AppLanguageSheet extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Container(
+
                         alignment: Alignment.bottomLeft,
                         margin: const EdgeInsets.only(top: 15,left: 15),
                         child: const Text("English",style:  TextStyle(
