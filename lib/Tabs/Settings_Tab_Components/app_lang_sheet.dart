@@ -1,6 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami/MyApp/my_theme.dart';
 
 class AppLanguageSheet extends StatelessWidget {
@@ -17,9 +18,10 @@ class AppLanguageSheet extends StatelessWidget {
               children: [
                 Container(
                   width: double.infinity,
-                  margin: const EdgeInsets.only(left: 20, right: 20, top: 15),
-                  child: const Text("Language",style:  TextStyle(
+                  margin: const EdgeInsets.only(left: 20, right: 20, top: 15).r,
+                  child:  Text("Language",style:  TextStyle(
                     fontFamily: 'elmessiri',
+                    fontSize: 30.sp
                   ),),
                 ),
                 Row(
@@ -29,17 +31,17 @@ class AppLanguageSheet extends StatelessWidget {
                       child: Container(
 
                         alignment: Alignment.bottomLeft,
-                        margin: const EdgeInsets.only(top: 15,left: 15),
-                        child: const Text("English",style:  TextStyle(
+                        margin: const EdgeInsets.only(top: 15,left: 15,).r,
+                        child:  Text("English",style:  TextStyle(
                           fontFamily: 'elmessiri',
-                          fontSize: 12,
+                          fontSize: 22.sp,
                         ),),
                       ),
                     ),
                     Expanded(
                       child: Container(
                           alignment: Alignment.bottomRight,
-                          margin: const EdgeInsets.only(top: 15,right: 15),
+                          margin: const EdgeInsets.only(top: 15,right: 15).r,
                           child: const Icon(Icons.done, color: MyTheme.primaryColor,)
                       ),
                     ),
@@ -51,17 +53,17 @@ class AppLanguageSheet extends StatelessWidget {
                     Expanded(
                       child: Container(
                         alignment: Alignment.bottomLeft,
-                        margin: const EdgeInsets.only(top: 15,left: 15),
-                        child: const Text("Arabic",style:  TextStyle(
+                        margin: const EdgeInsets.only(top: 15,left: 15).r,
+                        child:  Text("Arabic",style:  TextStyle(
                           fontFamily: 'elmessiri',
-                          fontSize: 12,
+                          fontSize: 22.sp,
                         ),),
                       ),
                     ),
                     Expanded(
                       child: Container(
                           alignment: Alignment.bottomRight,
-                          margin: const EdgeInsets.only(top: 15,right: 15),
+                          margin: const EdgeInsets.only(top: 15,right: 15).r,
                           child: const Icon(Icons.done, color: Colors.black,)
                       ),
                     ),
@@ -75,9 +77,12 @@ class AppLanguageSheet extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             border: Border.all(color: const Color(0xFFB7935F), width: 2)),
         alignment: Alignment.topLeft,
-        margin: const EdgeInsets.only(left: 25, bottom: 20, top: 20),
-        padding: const EdgeInsets.all(10),
-        child: const Text('English'),
+        margin: const EdgeInsets.only(left: 20, bottom: 20, top: 20,right: 20).r,
+        padding: const EdgeInsets.all(10).r,
+        child:  Text('English',style: TextStyle(
+          fontFamily: 'elmessiri',
+          fontSize: 25.sp
+        ),),
       ),
     );
   }

@@ -25,12 +25,12 @@ class _SebhaTabState extends State<SebhaTab> {
         Sebha_Logo(onSebhaClick, counter),
         SebhaTitle(),
         Container(
-          padding: const EdgeInsets.all(20).r,
+          padding: const EdgeInsets.all(30).r,
           margin: const EdgeInsets.only(top: 20).r,
           decoration: BoxDecoration(
               color: const Color.fromRGBO(183, 147, 95, 0.57),
               borderRadius: BorderRadius.circular(25.r)),
-          child: Text('$counter'),
+          child: Text('$counter',style: TextStyle(fontSize: 30.sp),),
         ),
         Container(
           margin: const EdgeInsets.only(top: 20).r,
@@ -40,7 +40,7 @@ class _SebhaTabState extends State<SebhaTab> {
             ),
             child: Text(
               title,
-              style: TextStyle(color: Colors.white, fontFamily: 'JFFlat',fontSize: 25.sp),
+              style: TextStyle(color: Colors.white, fontFamily: 'JFFlat',fontSize: 30.sp),
             ),
             onPressed: () {
               if (counter >= 0 && counter <= 30 && title == 'Subhan Allah') {

@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami/Data_Classes/hadeth_model.dart';
 
 class HadethScreen extends StatefulWidget {
@@ -30,7 +31,7 @@ class _HadethScreenState extends State<HadethScreen> {
           title: Text('hadeth ${hadethModel.hadethNumber + 1}',),
         ),
         body: Container(
-          margin: const EdgeInsets.only(bottom: 90,right: 20,left: 20),
+          margin: const EdgeInsets.only(bottom: 90,right: 20,left: 20).r,
           child: Card(
             color: const Color.fromRGBO(255, 255, 255, 0.7607843137254902),
             elevation: 20,
@@ -38,6 +39,9 @@ class _HadethScreenState extends State<HadethScreen> {
               itemBuilder: (context, index) => Text(
                 content[index],
                 textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 25.sp
+                ),
               ),
               itemCount: content.length,
             ),
