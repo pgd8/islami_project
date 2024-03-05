@@ -1,0 +1,14 @@
+{
+   "app_Name": "إسلامي",
+   "sura_Name":"إسم السورة",
+   "subhan_Allah":"سبحان الله",
+   "tasbeh_Count ":"عدد التسبيحات",
+   "alhamdulellah ":"الحمد لله",
+   "allah_Akbar" : "الله أكبر",
+   "hadeth" : "حديث",
+   "ahadeth" : "أحاديث",
+   "language" : "اللغة",
+   "mode" : "وضع التطبيق",
+   "light" : "ساطع",
+   "dark" : "داكن"
+}

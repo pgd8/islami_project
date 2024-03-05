@@ -19,33 +19,36 @@ class AppLanguageSheet extends StatelessWidget {
                 Container(
                   width: double.infinity,
                   margin: const EdgeInsets.only(left: 20, right: 20, top: 15).r,
-                  child:  Text("Language",style:  TextStyle(
+                  child:  Text("Language",
+                    style:  TextStyle(
                     fontFamily: 'elmessiri',
                     fontSize: 30.sp
                   ),),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Expanded(
-                      child: Container(
-
-                        alignment: Alignment.bottomLeft,
-                        margin: const EdgeInsets.only(top: 15,left: 15,).r,
-                        child:  Text("English",style:  TextStyle(
-                          fontFamily: 'elmessiri',
-                          fontSize: 22.sp,
-                        ),),
+                InkWell(
+                  onTap: (){},
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: Container(
+                          alignment: Alignment.bottomLeft,
+                          margin: const EdgeInsets.only(top: 15,left: 15,).r,
+                          child:  Text("English",style:  TextStyle(
+                            fontFamily: 'elmessiri',
+                            fontSize: 22.sp,
+                          ),),
+                        ),
                       ),
-                    ),
-                    Expanded(
-                      child: Container(
-                          alignment: Alignment.bottomRight,
-                          margin: const EdgeInsets.only(top: 15,right: 15).r,
-                          child: const Icon(Icons.done, color: MyTheme.primaryColor,)
+                      Expanded(
+                        child: Container(
+                            alignment: Alignment.bottomRight,
+                            margin: const EdgeInsets.only(top: 15,right: 15).r,
+                            child: const Icon(Icons.done, color: MyTheme.primaryColor,)
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

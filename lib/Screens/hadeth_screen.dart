@@ -17,6 +17,7 @@ class _HadethScreenState extends State<HadethScreen> {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context,designSize: const Size(420, 870));
     HadethModel hadethModel =
         ModalRoute.of(context)!.settings.arguments as HadethModel;
     if (content.isEmpty) {

@@ -1,6 +1,6 @@
 // ignore_for_file: use_key_in_widget_constructors
-
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami/MyApp/my_theme.dart';
 import 'package:islami/Screens/hadeth_screen.dart';
@@ -11,9 +11,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(412, 870),
+      designSize: const Size(412, 871),
+      ensureScreenSize: true,
       minTextAdapt: true,
       builder: (_, child) => MaterialApp(
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        locale: Locale("en"),
         theme: MyTheme.lightTheme,
         darkTheme: MyTheme.darkTheme,
         debugShowCheckedModeBanner: false,

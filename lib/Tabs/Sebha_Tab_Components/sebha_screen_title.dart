@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SebhaTitle extends StatelessWidget {
 
@@ -11,7 +12,7 @@ class SebhaTitle extends StatelessWidget {
     return Container(
         margin: const EdgeInsets.only(top: 20),
         child: Text(
-          'Tasbeh Count',
+          AppLocalizations.of(context)!.tasbeh_Count,
           style: TextStyle(fontFamily: 'elmessiri',fontSize: 30.sp),
         ));
   }

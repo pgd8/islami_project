@@ -11,7 +11,6 @@ class SettingTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: Alignment.topLeft,
         child: Text(title,
             style:  TextStyle(fontFamily: 'elmessiri', fontSize: 30.sp)));
   }

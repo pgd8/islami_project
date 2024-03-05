@@ -15,8 +15,9 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context, designSize: const Size(420, 870));
     SuraModel sura = ModalRoute.of(context)!.settings.arguments as SuraModel;
-    if(content.isEmpty){
+    if (content.isEmpty) {
       loadFile(sura.index);
     }
     return Container(
@@ -31,21 +32,27 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
           centerTitle: true,
         ),
         body: Container(
-          margin: const EdgeInsets.only(bottom: 90,right: 20,left: 20).r,
+          margin: const EdgeInsets.only(bottom: 90, right: 20, left: 20).r,
           child: Card(
             color: const Color.fromRGBO(255, 255, 255, 0.7607843137254902),
-            elevation: 20.r,
-            child: ListView.separated(
-                itemBuilder: (context, index) =>
-                    Text(content[index],textAlign: TextAlign.center,style: TextStyle(fontSize: 25.sp),),
-              separatorBuilder: (context, index) => const Divider(
-                thickness: 0.75,
-                color: Color(0xFFB7935F),
-                endIndent: 50,
-                indent: 50,
+            elevation: 30.r,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
+              child: ListView.separated(
+                itemBuilder: (context, index) => Text(
+                  "${content[index]}",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 25.sp),
+                ),
+                separatorBuilder: (context, index) => Divider(
+                  thickness: 1.5.h,
+                  color: Color(0xFFB7935F),
+                  indent: 50.w,
+                  endIndent: 50.w,
+                ),
+                itemCount: content.length,
               ),
-              itemCount: content.length,
-              ),
+            ),
           ),
         ),
       ),
@@ -54,7 +61,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
 
   loadFile(int index) async {
     String suraContent =
-        await rootBundle.loadString('assets/quran_files/${index+1}.txt');
+        await rootBundle.loadString('assets/quran_files/${index + 1}.txt');
     List<String> lines = suraContent.split("\n");
     content = lines;
     setState(() {});

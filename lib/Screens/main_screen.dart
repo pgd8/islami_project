@@ -1,6 +1,8 @@
 // ignore_for_file: use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami/Tabs/hadeth_tab.dart';
 import 'package:islami/Tabs/quran_tab.dart';
 import 'package:islami/Tabs/radio_tab.dart';
@@ -19,6 +21,7 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context,designSize: const Size(420, 870));
     return Container(
       decoration: const BoxDecoration(
           image: DecorationImage(
@@ -28,8 +31,8 @@ class _MainScreenState extends State<MainScreen> {
               fit: BoxFit.fill)),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text(
-            'Islami',
+          title: Text(
+            AppLocalizations.of(context)!.app_Name,
           ),
           centerTitle: true,
         ),
