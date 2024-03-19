@@ -134,7 +134,7 @@ class QuranTab extends StatelessWidget {
          Text(
           AppLocalizations.of(context)!.sura_Name,
           textAlign: TextAlign.center,
-          style: TextStyle(fontFamily: 'elmessiri',fontSize: 25.sp),
+          style: TextStyle(fontFamily: 'elmessiri',fontSize: 20.sp),
         ),
         QuranTabDiv(),
         Expanded(
@@ -148,7 +148,7 @@ class QuranTab extends StatelessWidget {
                 margin: const EdgeInsets.only(top: 10),
                 child: Text(
                   suraName[index],
-                  style:  TextStyle(fontFamily: 'JFFlat',fontSize: 25.sp),
+                  style:  TextStyle(fontFamily: 'JFFlat',fontSize: 20.sp),
                   textAlign: TextAlign.center,
                 ),
               ),

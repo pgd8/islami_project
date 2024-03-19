@@ -12,6 +12,6 @@ class SettingTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         child: Text(title,
-            style:  TextStyle(fontFamily: 'elmessiri', fontSize: 30.sp)));
+            style:  TextStyle(fontFamily: 'elmessiri', fontSize: 25.sp)));
   }
 }
