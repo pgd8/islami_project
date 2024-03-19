@@ -4,17 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami/MyApp/my_theme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami/providers/my_provider.dart';
+import 'package:provider/provider.dart';
 
-class AppModeSheet extends StatefulWidget {
-  @override
-  State<AppModeSheet> createState() => _AppModeSheetState();
-}
-
-class _AppModeSheetState extends State<AppModeSheet> {
-  bool isLight = true;
-
+class AppModeSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<MyProvider>(context);
     return InkWell(
       onTap: () {
         showModalBottomSheet(
@@ -36,9 +32,7 @@ class _AppModeSheetState extends State<AppModeSheet> {
               ),
               InkWell(
                 onTap: () {
-                  setState(() {
-                    isLight = true;
-                  });
+                  provider.changeMode(ThemeMode.light);
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -52,7 +46,7 @@ class _AppModeSheetState extends State<AppModeSheet> {
                           style: TextStyle(
                               fontFamily: 'elmessiri',
                               fontSize: 22.sp,
-                              color: isLight
+                              color: provider.myThemeMode == ThemeMode.light
                                   ? MyTheme.primaryColor
                                   : Colors.black),
                         ),
@@ -62,17 +56,19 @@ class _AppModeSheetState extends State<AppModeSheet> {
                       child: Container(
                           alignment: Alignment.bottomRight,
                           margin: const EdgeInsets.only(top: 15, right: 15).r,
-                          child:  Icon(
+                          child: Icon(
                             Icons.done,
-                            color: isLight? MyTheme.primaryColor : Colors.black,
+                            color: provider.myThemeMode == ThemeMode.light
+                                ? MyTheme.primaryColor
+                                : Colors.black,
                           )),
                     ),
                   ],
                 ),
               ),
               InkWell(
-                onTap: (){
-                  isLight = false;
+                onTap: () {
+                  provider.changeMode(ThemeMode.dark);
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -86,7 +82,9 @@ class _AppModeSheetState extends State<AppModeSheet> {
                           style: TextStyle(
                             fontFamily: 'elmessiri',
                             fontSize: 22.sp,
-                            color: isLight? Colors.black :MyTheme.primaryColor,
+                            color: provider.myThemeMode == ThemeMode.light
+                                ? Colors.black
+                                : MyTheme.primaryColor,
                           ),
                         ),
                       ),
@@ -95,9 +93,11 @@ class _AppModeSheetState extends State<AppModeSheet> {
                       child: Container(
                           alignment: Alignment.bottomRight,
                           margin: const EdgeInsets.only(top: 15, right: 15).r,
-                          child:  Icon(
+                          child: Icon(
                             Icons.done,
-                            color: isLight? Colors.black :MyTheme.primaryColor,
+                            color: provider.myThemeMode == ThemeMode.light
+                                ? Colors.black
+                                : MyTheme.primaryColor,
                           )),
                     ),
                   ],
