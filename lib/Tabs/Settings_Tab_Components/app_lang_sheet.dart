@@ -5,15 +5,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami/MyApp/my_theme.dart';
 import 'package:islami/providers/my_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class AppLanguageSheet extends StatefulWidget {
-  @override
-  State<AppLanguageSheet> createState() => _AppLanguageSheetState();
-}
-
-class _AppLanguageSheetState extends State<AppLanguageSheet> {
-  bool isEnglish = true;
-
+class AppLanguageSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<MyProvider>(context);
@@ -29,13 +23,12 @@ class _AppLanguageSheetState extends State<AppLanguageSheet> {
                 width: double.infinity,
                 margin: const EdgeInsets.only(left: 20, right: 20, top: 15).r,
                 child: Text(
-                  "Language",
+                  AppLocalizations.of(context)!.language,
                   style: TextStyle(fontFamily: 'elmessiri', fontSize: 25.sp),
                 ),
               ),
               InkWell(
                 onTap: () {
-                  isEnglish = true;
                   provider.changeLanguage("en");
                 },
                 child: Row(
@@ -53,7 +46,7 @@ class _AppLanguageSheetState extends State<AppLanguageSheet> {
                           style: TextStyle(
                               fontFamily: 'elmessiri',
                               fontSize: 22.sp,
-                              color: isEnglish
+                              color: provider.languageCode == "en"
                                   ? MyTheme.primaryColor
                                   : Colors.black),
                         ),
@@ -65,8 +58,9 @@ class _AppLanguageSheetState extends State<AppLanguageSheet> {
                           margin: const EdgeInsets.only(top: 15, right: 15).r,
                           child: Icon(
                             Icons.done,
-                            color:
-                                isEnglish ? MyTheme.primaryColor : Colors.black,
+                            color: provider.languageCode == "en"
+                                ? MyTheme.primaryColor
+                                : Colors.black,
                           )),
                     ),
                   ],
@@ -74,7 +68,6 @@ class _AppLanguageSheetState extends State<AppLanguageSheet> {
               ),
               InkWell(
                 onTap: () {
-                  isEnglish = false;
                   provider.changeLanguage("ar");
                 },
                 child: Row(
@@ -89,9 +82,9 @@ class _AppLanguageSheetState extends State<AppLanguageSheet> {
                           style: TextStyle(
                               fontFamily: 'elmessiri',
                               fontSize: 22.sp,
-                              color: isEnglish
-                                  ? Colors.black
-                                  : MyTheme.primaryColor),
+                              color: provider.languageCode == "ar"
+                                  ? MyTheme.primaryColor
+                                  : Colors.black),
                         ),
                       ),
                     ),
@@ -101,8 +94,9 @@ class _AppLanguageSheetState extends State<AppLanguageSheet> {
                           margin: const EdgeInsets.only(top: 15, right: 15).r,
                           child: Icon(
                             Icons.done,
-                            color:
-                                isEnglish ? Colors.black : MyTheme.primaryColor,
+                            color: provider.languageCode == "ar"
+                                ? MyTheme.primaryColor
+                                : Colors.black
                           )),
                     ),
                   ],
